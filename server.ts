@@ -1,15 +1,15 @@
 import "reflect-metadata";
 import express, { json, urlencoded } from "express";
 import "dotenv/config";
-import bodyParser from "body-parser";
+//import bodyParser from "body-parser";
 import { Request, Response } from "express";
 import { AppRoutes } from "./routes";
-
+import { connectDB } from "./database";
 
 const app = express();
 
-  app.use(json())
-  app.use(express.urlencoded({extended: true})); 
+app.use(json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 AppRoutes.forEach((route) => {
@@ -36,3 +36,7 @@ const startServer = async () => {
   await startServer();
 })();
 
+(async () => {
+  await connectDB();
+  await startServer();
+})();
