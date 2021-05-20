@@ -1,4 +1,4 @@
-{   "watch": ["./src/**/*", ".env"],
+{   "watch": ["./SRC/**/*", ".env"],
     "ext": ".ts, .js",
     "exec": "ts-node ./server.ts" }
 

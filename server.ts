@@ -32,9 +32,9 @@ const startServer = async () => {
 
 //async function filter(req:any,res:any):Promise<any> { };
 
-(async () => {
-  await startServer();
-})();
+// (async () => {
+//   await startServer();
+// })();
 
 (async () => {
   await connectDB();
