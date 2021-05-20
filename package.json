@@ -17,6 +17,7 @@
     "express": "^4.17.1",
     "inversify": "^5.1.1",
     "morgan": "^1.10.0",
+    "oracle-sp-types": "^1.4.9",
     "oracledb": "^5.1.0",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.32",

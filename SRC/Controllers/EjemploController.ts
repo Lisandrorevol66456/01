@@ -50,7 +50,13 @@ export const EjemploController = {
   ejemploActionConParametros,
   ejemploActionConQParametros,
   ejemploActionPost,
+  obtenerPorSP
 };
+async function obtenerPorSP(request: Request, response: Response) {
+  let persona: Persona = request.body;
+  return response.status(201)
+      .json(await _ejemploService.obtenerPorSP());
+}
 
 // export async function ejemploAction(request: Request, response: Response) {
 //   return response.status(201).json("Esto es un ejemplo");

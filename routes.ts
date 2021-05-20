@@ -16,4 +16,9 @@ export const AppRoutes = [
     method: "post",
     action: EjemploController.ejemploActionPost,
   },
+  {
+    path: "/obtenerPorSP",
+    method: "get",
+    action: EjemploController.obtenerPorSP,
+   },
 ];
