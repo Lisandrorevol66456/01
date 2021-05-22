@@ -15,4 +15,9 @@ export class User {
     @Column()
     age: number;
 
+    constructor(id:number,firstName: string, lastName: string,age: number)
+    {
+        
+    }
 }
+

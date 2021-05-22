@@ -6,6 +6,9 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
+// import { Reparticiones } from "./Reparticiones";
+// import { Personas } from "./Personas";
+// import { Puntajes } from "./Puntajes";
 import { Reparticiones } from "./Reparticiones";
 import { Personas } from "./Personas";
 import { Puntajes } from "./Puntajes";

@@ -21,4 +21,15 @@ export const AppRoutes = [
     method: "get",
     action: EjemploController.obtenerPorSP,
    },
+   {
+    path: "/obtenerTemas",
+    method: "get",
+    action: EjemploController.obtenerTemas,
+   },
+   {
+    path: "/obtenerReparticiones",
+    method: "get",
+    action: EjemploController.obtenerReparticiones,
+   },
+
 ];

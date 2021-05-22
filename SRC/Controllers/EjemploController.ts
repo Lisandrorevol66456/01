@@ -50,7 +50,10 @@ export const EjemploController = {
   ejemploActionConParametros,
   ejemploActionConQParametros,
   ejemploActionPost,
-  obtenerPorSP
+  obtenerPorSP,
+  obtenerTemas,
+  obtenerReparticiones
+  
 };
 async function obtenerPorSP(request: Request, response: Response) {
   let persona: Persona = request.body;
@@ -58,46 +61,16 @@ async function obtenerPorSP(request: Request, response: Response) {
       .json(await _ejemploService.obtenerPorSP());
 }
 
-// export async function ejemploAction(request: Request, response: Response) {
-//   return response.status(201).json("Esto es un ejemplo");
-// }
-// async function ejemploAction(request: Request, response: Response) {
-//   let service: EjemploService = new EjemploService();
-//   service.ejemploAction(request, response);
-// }
-// async function ejemploAction(request: Request, response: Response) {
-//   let service: EjemploServiceBis = new EjemploServiceBis();
-//   return response.status(201).json(await service.ejemplo());
-// }
-// export async function ejemploActionConParametros(
-//   request: Request,
-//   response: Response
-// ) {
-//   return response
-//     .status(201)
-//     .json(`Hola ${request.params.nombre} ${request.params.apellido}`);
-// }
-// export async function ejemploActionConQParametros(
-//   request: Request,
-//   response: Response
-// ) {
-//   return response
-//     .status(201)
-//     .json(`Hola ${request.query.nombre} ${request.query.apellido}`);
-// }
 
-// export async function ejemploActionPost(request: Request, response: Response) {
-//   let persona: Persona = request.body;
-//   return response
-//     .status(201)
-//     .json(
-//       `Soy ${persona.nombre} ${persona.apellido} y tengo ${persona.edad} años`
-//     );
-// }
-
-// export const EjemploController = {
-//   ejemploAction,
-//   ejemploActionConParametros,
-//   ejemploActionConQParametros,
-//   ejemploActionPost,
-// };
+async function obtenerTemas
+(request: Request, response: Response) {
+  let persona: Persona = request.body;
+  return response.status(201)
+      .json(await _ejemploService.obtenerTemas());
+}
+async function obtenerReparticiones
+(request: Request, response: Response) {
+  let persona: Persona = request.body;
+  return response.status(201)
+      .json(await _ejemploService.obtenerReparticiones());
+}

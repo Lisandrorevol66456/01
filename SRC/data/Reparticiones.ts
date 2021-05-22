@@ -5,8 +5,8 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Alumnos } from "./Alumnos";
 
+import {Alumnos} from "./Alumnos";
 @Index("REPARTICIONES_PK", ["idReparticion"], { unique: true })
 @Entity("REPARTICIONES")
 export class Reparticiones {

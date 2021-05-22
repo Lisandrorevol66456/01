@@ -6,7 +6,8 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Alumnos } from "./Alumnos";
+
+import {Alumnos} from "./Alumnos";
 import { Profesores } from "./Profesores";
 import { Temas } from "./Temas";
 

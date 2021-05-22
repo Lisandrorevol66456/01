@@ -5,8 +5,8 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
+//import { Alumnos } from "./Alumnos";
 import { Alumnos } from "./Alumnos";
-
 @Index("PERSONAS_PK", ["idPersona"], { unique: true })
 @Entity("PERSONAS")
 export class Personas {
@@ -28,8 +28,14 @@ export class Personas {
   @OneToMany(() => Alumnos, (alumnos) => alumnos.idPersona)
   alumnos: Alumnos[];
 
-
-  constructor(idPersona: number, nombre: string | null, apellido: string | null, edad: number | null, cuil: string, alumnos: Alumnos[]) {
+  constructor(
+    idPersona: number,
+    nombre: string | null,
+    apellido: string | null,
+    edad: number | null,
+    cuil: string,
+    alumnos: Alumnos[]
+  ) {
     this.idPersona = idPersona;
     this.nombre = nombre;
     this.apellido = apellido;
