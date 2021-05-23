@@ -52,25 +52,26 @@ export const EjemploController = {
   ejemploActionPost,
   obtenerPorSP,
   obtenerTemas,
-  obtenerReparticiones
-  
+  obtenerReparticiones,
+  crearToken,
 };
 async function obtenerPorSP(request: Request, response: Response) {
   let persona: Persona = request.body;
-  return response.status(201)
-      .json(await _ejemploService.obtenerPorSP());
+  return response.status(201).json(await _ejemploService.obtenerPorSP());
 }
 
-
-async function obtenerTemas
-(request: Request, response: Response) {
+async function obtenerTemas(request: Request, response: Response) {
   let persona: Persona = request.body;
-  return response.status(201)
-      .json(await _ejemploService.obtenerTemas());
+  return response.status(201).json(await _ejemploService.obtenerTemas());
 }
-async function obtenerReparticiones
-(request: Request, response: Response) {
+async function obtenerReparticiones(request: Request, response: Response) {
   let persona: Persona = request.body;
-  return response.status(201)
-      .json(await _ejemploService.obtenerReparticiones());
+  return response
+    .status(201)
+    .json(await _ejemploService.obtenerReparticiones());
+}
+async function crearToken(request: Request, response: Response) {
+  let usuario = request.body;
+  response.setHeader("authorization", _ejemploService.crearToken(usuario));
+  return response.status(200).send();
 }

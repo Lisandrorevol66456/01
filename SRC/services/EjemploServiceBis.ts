@@ -4,6 +4,10 @@ import { Persona } from "../models/persona";
 import { getManager } from "typeorm";
 import { Temas } from "../data/Temas";
 import { Reparticiones } from "../data/Reparticiones";
+import config from "../../config/config";
+import * as jwt from "jsonwebtoken";
+import { Usuario } from "../models/usuario";
+
 @injectable()
 export class EjemploServiceBis {
   constructor() {}
@@ -28,6 +32,7 @@ export class EjemploServiceBis {
     console.error(entity);
     return entity;
   }
+
   public async obtenerTemas() {
     try {
       const t: any = await getManager()
@@ -55,5 +60,19 @@ export class EjemploServiceBis {
       console.log(e);
       return {};
     }
+  }
+  public crearToken(usuario: Usuario) {
+    var tokenData = {
+      usuario: {
+        nombre: usuario.nombre,
+        id: usuario.id,
+        idPerfil: usuario.perfil.id,
+      },
+    };
+    const token = jwt.sign(tokenData, config.jwtSecret, {
+      expiresIn: "12h",
+      algorithm: "HS512",
+    });
+    return token;
   }
 }
