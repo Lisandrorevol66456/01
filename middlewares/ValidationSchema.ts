@@ -28,6 +28,8 @@ const schemaTemas = {};
 const schemaReparticiones = {};
 const schemaPorSP = {};
 const schematoken = {};
+const  schemaObtenerTemasPorSP = {};
+const schemaobtenerQTemas = {};
 export const Schema = {
   schemaEjemplo,
   schemaEjemploQParams,
@@ -37,4 +39,6 @@ export const Schema = {
   schemaPorSP,
   schemaPost,
   schematoken,
+  schemaObtenerTemasPorSP,
+  schemaobtenerQTemas
 };

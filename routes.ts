@@ -50,5 +50,17 @@ export const AppRoutes = [
     action: EjemploController.crearToken,
     schema : Schema.schematoken
    },
+   {
+    path: "/obtenerTemasPorSP",
+    method: "get",
+    action: EjercicioController.obtenerTemasPorSP,
+    schema: Schema.schemaObtenerTemasPorSP
+   },
+   {
+    path: "/obtenerQTemas",
+    method: "get",
+    action: EjercicioController.obtenerQTemas,
+    schema: Schema.schemaobtenerQTemas
+   },
 
 ];

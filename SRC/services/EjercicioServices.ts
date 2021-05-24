@@ -7,33 +7,14 @@ import { Reparticiones } from "../data/Reparticiones";
 import config from "../../config/config";
 import * as jwt from "jsonwebtoken";
 import { Usuario } from "../models/usuario";
+import { request } from "express";
 
 @injectable()
-export class EjemploServiceBis {
+export class EjercicioServices {
   constructor() {}
-  public async ejemplo() {
-    return "Esto es un ejemplo";
-  }
-  public async ejemploConParametros(nombre: string, apellido: string) {
-    return `Hola ${nombre} ${apellido}`;
-  }
-  public async ejemploConQParametros(nombre: string, apellido: string) {
-    return `Hola ${nombre} ${apellido}`;
-  }
-  public async ejemploPost(persona: Persona) {
-    return `Soy ${persona.nombre} ${persona.apellido} y tengo ${persona.edad} años`;
-  }
-  public async obtenerPorSP(): Promise<any> {
-    let sp = new StoreProcedureDb("PR_OBTENER_TEMAS", []);
-    let entity;
-    await sp.executeSp().then(async (x: any) => {
-      entity = x;
-    });
-    console.error(entity);
-    return entity;
-  }
+  
   public async obtenerTemasPorSP(tema:Temas):Promise<any>{
-    let sp = new StoreProcedureDb("PR_OBTENER_TEMA_ID", [8]);
+    let sp = new StoreProcedureDb("PR_OBTENER_TEMA_ID", [tema.idTema]);
     let entity;
     await sp.executeSp().then(async (x: any) => {
       entity = x;
@@ -54,6 +35,8 @@ export class EjemploServiceBis {
       return {};
     }
   }
+
+  
 
   public async obtenerTemas() {
     try {
