@@ -9,10 +9,10 @@ import * as jwt from "jsonwebtoken";
 import config from "./config/config";
 
 const app = express();
+app.use(filter);
 const { checkSchema, validationResult } = require("express-validator");
 process.env.TZ = "America/Argentina/Cordoba";
 app.use(json());
-app.use(filter);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

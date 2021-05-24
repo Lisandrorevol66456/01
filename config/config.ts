@@ -1,1 +1,1 @@
-export default { jwtSecret: "@QEGTUI?_¿23lIsd,Ap+{{!,KLIS2" };
+export default { jwtSecret: "aa@QEGTUI?_¿23lIsd,Ap+{{!,KLIS2" };
