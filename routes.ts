@@ -1,5 +1,6 @@
 import { EjemploController } from "./SRC/Controllers/EjemploController";
 import { Schema } from "./middlewares/ValidationSchema";
+import { EjercicioController } from "./SRC/Controllers/ejercicioController";
 
 
 export const AppRoutes = [
@@ -34,7 +35,7 @@ export const AppRoutes = [
    {
     path: "/obtenerTemas",
     method: "get",
-    action: EjemploController.obtenerTemas,
+    action: EjercicioController.obtenerTemas,
     schema: Schema.schemaTemas
    },
    {

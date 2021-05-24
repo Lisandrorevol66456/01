@@ -1,0 +1,9 @@
+version: "3"
+services:
+    api-capacitacion:
+        build:
+            context: . 
+            dockerfile: ./Dockerfile 
+        ports:
+            - "3108:3108" 
+        container_name: api-capacitacion
